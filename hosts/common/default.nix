@@ -47,4 +47,10 @@
   #boot.loader.systemd-boot.enable = true;
   boot.kernelModules = ["kvm-amd"];
   boot.loader.efi.canTouchEfiVariables = true;
+
+  users.users.${secrets.main-user.User.Name} = {
+    isNormalUser = true;
+    description = secrets.main-user.User.Description;
+    extraGroups = ["networkmanager" "wheel"];
+  };
 }
