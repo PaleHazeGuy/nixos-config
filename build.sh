@@ -1,20 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-debug=0
+mode=switch
 hostname=
 
 for arg in "$@"; do
   case "$arg" in
-    --debug) debug=1 ;;
+    --test)  mode=test ;;
+    --debug) mode=dry-activate ;;
     -*) echo "unknown flag: $arg" >&2; exit 1 ;;
     *) hostname="$arg" ;;
   esac
 done
 
 if [[ -z "$hostname" ]]; then
-  echo "usage: $0 [--debug] <hostname>" >&2
+  echo "usage: $0 [--test|--debug] <hostname>" >&2
   echo "  $0 rog-flow-z13" >&2
+  echo "  $0 --test rog-flow-z13" >&2
   echo "  $0 --debug rog-flow-z13" >&2
   exit 1
 fi
@@ -28,7 +30,4 @@ trap cleanup EXIT
 
 git -C "$script_dir" add -f secrets/
 
-action=switch
-[[ $debug -eq 1 ]] && action=dry-activate
-
-sudo nixos-rebuild "$action" --flake "${script_dir}#${hostname}"
+sudo nixos-rebuild "$mode" --flake "${script_dir}#${hostname}"
