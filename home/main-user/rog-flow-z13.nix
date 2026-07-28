@@ -6,6 +6,8 @@
   userSettings = {
     programs = {
       neovim.enable = true;
+      yazi.enable = true;
+      kitty.enable = true;
     };
   };
 }
