@@ -5,6 +5,8 @@
 { config, lib, pkgs, secrets, ... }:
 
 {
+  imports = [ ../../modules/user ./settings.nix ];
+  
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = lib.mkDefault secrets.main-user.User.Name;
