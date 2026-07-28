@@ -5,7 +5,7 @@
 { config, lib, pkgs, secrets, ... }:
 
 {
-  imports = [ ../../modules/user ./settings.nix ];
+  imports = [ ../../modules/user ];
   
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
