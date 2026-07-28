@@ -1,14 +1,21 @@
 { lib, ... }:
 
 let
-  dir = ./.;
-  entries = builtins.readDir dir;
-  moduleDirs = builtins.attrNames (
-    lib.filterAttrs
-      (name: type: type == "directory" && builtins.pathExists (dir + "/${name}/default.nix"))
-      entries
-  );
+  findModules = dir:
+    let
+      entries = builtins.readDir dir;
+    in
+    lib.concatLists (lib.mapAttrsToList
+      (name: type:
+        let path = dir + "/${name}"; in
+        if type == "directory" then
+          if builtins.pathExists (path + "/default.nix")
+          then [ path ]
+          else findModules path
+        else []
+      )
+      entries);
 in
 {
-  imports = map (name: dir + "/${name}") moduleDirs;
+  imports = findModules ./.;
 }
