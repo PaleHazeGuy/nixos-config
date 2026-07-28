@@ -9,6 +9,8 @@
       yazi.enable = true;
       kitty.enable = true;
       chromium.enable = true;
+
+      hyprland.enable = true;
     };
   };
 }
