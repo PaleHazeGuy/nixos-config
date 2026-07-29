@@ -11,6 +11,7 @@
 
     programs = {
       neovim.enable = true;
+      zed-editor.enable = true;
 
       yazi.enable = true;
       nautilus.enable = true;
