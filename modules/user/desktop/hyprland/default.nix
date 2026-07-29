@@ -1,15 +1,26 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, helpers, pkgs, ... }:
 
 let
-	cfg = config.userSettings.programs.hyprland;
+  cfg = config.userSettings.programs.hyprland;
+  apps = config.userSettings.defaultApps;
 in
 {
-	options.userSettings.programs.hyprland.enable = lib.mkEnableOption "hyprland";
+  options.userSettings.programs.hyprland.enable = lib.mkEnableOption "hyprland";
 
-	config = lib.mkIf cfg.enable {
-		wayland.windowManager.hyprland = {
-			enable = true;
-			xwayland.enable = true;
-		};
-	};
+  config = lib.mkIf cfg.enable {
+    wayland.windowManager.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+      configType = "lua";
+
+      extraLuaFiles = {
+        "defaultApps" = {
+          autoLoad = false;
+          text = "return ${helpers.toLuaTable apps}";
+        };
+      };
+
+      extraConfig = builtins.readFile ./dotconf/hyprland.lua;
+    };
+  };
 }
