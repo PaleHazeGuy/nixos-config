@@ -21,6 +21,8 @@
       chromium.enable = true;
 
       hyprland.enable = true;
+
+			screenshot.enable = true;
     };
   };
 }
