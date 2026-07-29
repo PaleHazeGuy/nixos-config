@@ -3,8 +3,15 @@
 ----------------
 
 hl.config({
-    misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
-    },
+	misc = {
+		animate_mouse_windowdragging = false,
+		disable_hyprland_logo        = true,
+		disable_splash_rendering     = true,
+		enable_swallow               = true,
+		swallow_regex                = "^(Alacritty|kitty|footclient|brave-browser)$",
+	},
+
+	ecosystem = {
+		no_update_news = true,
+	},
 })
