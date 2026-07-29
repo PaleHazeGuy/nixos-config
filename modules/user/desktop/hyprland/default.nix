@@ -16,7 +16,7 @@ in
       extraLuaFiles = {
         "defaultApps" = {
           autoLoad = false;
-          text = "return ${helpers.toLuaTable apps}";
+          content = "return ${helpers.toLuaTable apps}";
         };
       };
 
