@@ -4,6 +4,11 @@
   imports = [ ./home.nix ../common ];
 
   userSettings = {
+    defaultApps = {
+      terminal = "kitty";
+      explorer = "nautilus";
+    };
+
     programs = {
       neovim.enable = true;
 
