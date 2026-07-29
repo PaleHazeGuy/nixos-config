@@ -21,6 +21,7 @@
       chromium.enable = true;
 
       hyprland.enable = true;
+			gtk-theme.enable = true;
 
 			screenshot.enable = true;
     };
