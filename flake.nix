@@ -38,14 +38,14 @@
     overlays = import ./overlays {inherit inputs;};
     nixosConfigurations = {
       rog-flow-z13 = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs secrets;};
+        specialArgs = { inherit inputs outputs secrets; helpers = import ./utils { inherit (nixpkgs) lib; }; };
         modules = [./hosts/rog-flow-z13];
       };
     };
     homeConfigurations = {
       "${secrets.main-user.User.Name}@nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        extraSpecialArgs = {inherit inputs outputs secrets;};
+        extraSpecialArgs = { inherit inputs outputs secrets; helpers = import ./utils { inherit (nixpkgs) lib; }; };
         modules = [./home/main-user/rog-flow-z13.nix];
       };
     };
