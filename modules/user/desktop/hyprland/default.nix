@@ -20,11 +20,11 @@ in
         };
       };
 
-      extraConfig = builtins.readFile ./dotconf/hyprland.lua;
+      extraConfig = builtins.readFile ./dotlua/hyprland.lua;
     };
 
     home.file.".config/hypr/modules" = {
-      source = ./dotconf/modules;
+      source = ./dotlua/modules;
       recursive = true;
     };
   };
