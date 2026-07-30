@@ -30,6 +30,8 @@ trap cleanup EXIT
 
 git -C "$script_dir" add -f secrets/
 
+"${script_dir}/confighandler.sh" backup
+
 sudo nixos-rebuild "$mode" --flake "${script_dir}#${hostname}"
 
 home_manager_target="$(nix eval --raw "${script_dir}#homeConfigurations" --apply 'attrs: builtins.head (builtins.attrNames attrs)')"
