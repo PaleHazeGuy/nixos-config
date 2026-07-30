@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [ ../../modules/system ];
-  
+
   nixpkgs = {
     overlays = [
       outputs.overlays.additions
