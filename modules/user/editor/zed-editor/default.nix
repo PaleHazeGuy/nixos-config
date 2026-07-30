@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, helpers, ... }:
 
 let
 	cfg = config.userSettings.programs.zed-editor;
@@ -8,5 +8,10 @@ in
 
 	config = lib.mkIf cfg.enable {
 		home.packages = [ pkgs.zed-editor-fhs ];
+
+		home.file = helpers.mkDotfiles {
+			dir = ./dotjson;
+			prefix = ".config/zed";
+		};
 	};
 }

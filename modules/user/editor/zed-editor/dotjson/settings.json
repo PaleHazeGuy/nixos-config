@@ -1,0 +1,237 @@
+
+{
+  "disable_ai": false,
+  "proxy": "",
+  "git": {
+    "inline_blame": {
+      "enabled": true
+    },
+    "disable_git": false
+  },
+  "minimap": {
+    "current_line_highlight": "all",
+    "max_width_columns": 50,
+    "thumb_border": "left_open",
+    "thumb": "always",
+    "display_in": "active_editor",
+    "show": "always"
+  },
+  "instrumentation": {
+    "performance_profiler": {
+      "enabled": false
+    }
+  },
+  "edit_predictions": {
+    "provider": "none"
+  },
+  "markdown_preview_code_font_family": ".ZedMono",
+  "markdown_preview_font_family": ".ZedMono",
+  "ui_font_family": ".ZedMono",
+  "active_pane_modifiers": {
+    "inactive_opacity": 1.0
+  },
+  "window_decorations": "client",
+  "use_system_window_tabs": false,
+  "focus_follows_mouse": {
+    "enabled": false
+  },
+  "bottom_dock_layout": "contained",
+  "preview_tabs": {
+    "enable_preview_multibuffer_from_code_navigation": false,
+    "enable_preview_from_file_finder": true,
+    "enable_preview_from_project_panel": true,
+    "enabled": true
+  },
+  "tabs": {
+    "show_close_button": "hover",
+    "show_diagnostics": "off",
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true
+  },
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": true,
+    "show_nav_history_buttons": false,
+    "show": true
+  },
+  "title_bar": {
+    "button_layout": "platform_default",
+    "show_menus": false,
+    "show_user_picture": false,
+    "show_user_menu": true,
+    "show_sign_in": true,
+    "show_onboarding_banner": true,
+    "show_project_items": true,
+    "show_branch_name": true,
+    "show_branch_status_icon": true
+  },
+  "debugger": {
+    "button": true
+  },
+  "search": {
+    "button": true
+  },
+  "diagnostics": {
+    "button": true
+  },
+  "status_bar": {
+    "show_active_file": false,
+    "line_endings_button": false,
+    "active_language_button": true
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "expand_terminal_card": true,
+    "notify_when_agent_waiting": "all_screens",
+    "play_sound_when_agent_done": "always",
+    "sidebar_side": "right",
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left",
+    "tree_view": true
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry",
+      "default_model": "gpt-5.2-codex/high"
+    }
+  },
+  "rounded_selection": true,
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "button": true,
+    "dock": "left"
+  },
+  "vim_mode": true,
+  "icon_theme": "Material Icon Theme",
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "dark",
+    "light": "GitHub Dark",
+    "dark": "GitHub Dark"
+  },
+  "terminal": {
+    "button": true,
+    "shell": {
+      "program": "zsh"
+    }
+  },
+  "experimental.theme_overrides": {
+    "background.appearance": "blurred",
+    "background": "#0f141780",
+    "editor.background": "#00000050",
+    "editor.gutter.background": "#00000030",
+    "tab_bar.background": "#00000030",
+    "terminal.background": "#00000030",
+    "toolbar.background": "#00000030",
+    "tab.active_background": "#b5cad705",
+    "tab.inactive_background": "#00000000",
+    "status_bar.background": "#00000030",
+    "title_bar.background": "#00000000",
+    "panel.background": "#00000030",
+    "border.variant": "#00000000",
+    "scrollbar.track.border": "#00000000",
+    "editor.active_line.background": "#b5cad705"
+  },
+  "languages": {
+    "Luau": {
+      "formatter": {
+        "external": {
+          "command": "stylua",
+          "arguments": ["-"]
+        }
+      }
+    }
+  },
+  "lsp": {
+    "luau-lsp": {
+      "settings": {
+        "luau-lsp": {
+          "ignoreGlobs": [],
+          "sourcemap": {
+            "enabled": true,
+            "autogenerate": true,
+            "rojoProjectFile": "default.project.json",
+            "includeNonScripts": true,
+            "sourcemapFile": "sourcemap.json"
+          },
+          "diagnostics": {
+            "includeDependents": true,
+            "workspace": true,
+            "strictDatamodelTypes": false
+          },
+          "types": {
+            "definitionFiles": [],
+            "disabledGlobals": []
+          },
+          "inlayHints": {
+            "parameterNames": "none",
+            "variableTypes": false,
+            "parameterTypes": false,
+            "functionReturnTypes": false,
+            "hideHintsForErrorTypes": false,
+            "hideHintsForMatchingParameterNames": true,
+            "typeHintMaxLength": 50,
+            "makeInsertable": true
+          },
+          "hover": {
+            "enabled": true,
+            "showTableKinds": false,
+            "multilineFunctionDefinitions": false,
+            "strictDatamodelTypes": true,
+            "includeStringLength": true
+          },
+          "completion": {
+            "enabled": true,
+            "autocompleteEnd": false,
+            "imports": {
+              "enabled": false,
+              "suggestServices": true,
+              "suggestRequires": true,
+              "requireStyle": "Auto",
+              "stringRequires": {
+                "enabled": false
+              },
+              "separateGroupsWithLine": false,
+              "ignoreGlobs": []
+            },
+            "addParentheses": true,
+            "addTabstopAfterParentheses": true,
+            "fillCallArguments": true,
+            "showPropertiesOnMethodCall": false,
+            "enableFragmentAutocomplete": false
+          },
+          "index": {
+            "enabled": true,
+            "maxFiles": 10000
+          },
+          "roblox": {
+            "enabled": true,
+            "security_level": "plugin",
+            "download_api_documentation": true,
+            "download_definitions": true
+          },
+
+          "definitions": [],
+          "documentation": []
+        }
+      }
+    }
+  }
+}
