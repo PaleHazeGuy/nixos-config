@@ -6,6 +6,7 @@ files=(
 	"hypr"
 	"kitty"
 	"nvim"
+	"zed"
 )
 suffix=".beforeflake"
 mode="${1:-}"
